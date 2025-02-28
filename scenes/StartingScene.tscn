@@ -12,5 +12,8 @@ position = Vector2(18, 17)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." instance=ExtResource("1_ciqur")]
-position = Vector2(-48, 23)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-46, 23)
+scale = Vector2(1.5, 1.5)
+SpeedBase = 4000.0
+SpeedMul = 1.5
+AnimMul = 1.5
