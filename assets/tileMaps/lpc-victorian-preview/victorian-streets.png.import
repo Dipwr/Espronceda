@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vykvydfxg1c"
-path="res://.godot/imported/rpg indoor tileset expansion 1 trans (1).png-ccc1dc2524df94a31c39e94962dae2a5.ctex"
+uid="uid://b33g6jrh55xhk"
+path="res://.godot/imported/victorian-streets.png-14a4db50b964ab4ce1f86ef532b7c8a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMaps/rpg indoor tileset expansion 1 trans (1).png"
-dest_files=["res://.godot/imported/rpg indoor tileset expansion 1 trans (1).png-ccc1dc2524df94a31c39e94962dae2a5.ctex"]
+source_file="res://assets/tileMaps/lpc-victorian-preview/victorian-streets.png"
+dest_files=["res://.godot/imported/victorian-streets.png-14a4db50b964ab4ce1f86ef532b7c8a0.ctex"]
 
 [params]
 

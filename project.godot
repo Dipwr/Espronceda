@@ -14,6 +14,7 @@ config/name="Espronceda"
 run/main_scene="res://scenes/StartingScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
+config/enabled=true
 
 [display]
 

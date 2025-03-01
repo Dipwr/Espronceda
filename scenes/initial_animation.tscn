@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5flomaqxncg1"]
+
+[ext_resource type="Script" path="res://scripts/initial_animation.gd" id="1_bk5ll"]
+
+[node name="InitialAnimation" type="Node"]
+script = ExtResource("1_bk5ll")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

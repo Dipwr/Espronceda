@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lgic2rmk4xvw"
-path="res://.godot/imported/rpg indoor tileset expansion 1 trans (3).png-838cd3c6b7a0fbd864d3ea523648a2d8.ctex"
+uid="uid://b4vykvydfxg1c"
+path="res://.godot/imported/rpg indoor tileset expansion 1 trans (1).png-2904db214433e88ee755a2a8ac7f4a43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMaps/rpg indoor tileset expansion 1 trans (3).png"
-dest_files=["res://.godot/imported/rpg indoor tileset expansion 1 trans (3).png-838cd3c6b7a0fbd864d3ea523648a2d8.ctex"]
+source_file="res://assets/tileMaps/rpgIndoor/rpg indoor tileset expansion 1 trans (1).png"
+dest_files=["res://.godot/imported/rpg indoor tileset expansion 1 trans (1).png-2904db214433e88ee755a2a8ac7f4a43.ctex"]
 
 [params]
 

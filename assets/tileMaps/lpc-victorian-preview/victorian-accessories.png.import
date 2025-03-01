@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g5ftfjvjtf3j"
-path="res://.godot/imported/rpg indoor tileset expansion 1 trans (2).png-63223a47f6326ed024e1135bded69c4a.ctex"
+uid="uid://djc8s52yxw6w8"
+path="res://.godot/imported/victorian-accessories.png-c7a8d1cdca1a15c1594907851a5e0a48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileMaps/rpg indoor tileset expansion 1 trans (2).png"
-dest_files=["res://.godot/imported/rpg indoor tileset expansion 1 trans (2).png-63223a47f6326ed024e1135bded69c4a.ctex"]
+source_file="res://assets/tileMaps/lpc-victorian-preview/victorian-accessories.png"
+dest_files=["res://.godot/imported/victorian-accessories.png-c7a8d1cdca1a15c1594907851a5e0a48.ctex"]
 
 [params]
 
