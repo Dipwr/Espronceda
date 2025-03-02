@@ -223,7 +223,10 @@ height = 10.0
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimatedSprite")]
 y_sort_enabled = true
 position = Vector2(548, 341)
+scale = Vector2(1.75, 1.75)
 script = ExtResource("1_yrsc7")
+SpeedMul = 1.5
+AnimMul = 1.5
 AnimatedSprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

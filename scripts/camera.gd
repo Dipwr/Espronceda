@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !(player.position.x <= -105) && !(player.position.x >= 329):
+	if !(player.position.x <= -122) && !(player.position.x >= 346):
 		position.x = player.position.x
