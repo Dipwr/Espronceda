@@ -8,21 +8,21 @@
 y_sort_enabled = true
 position = Vector2(0, 27)
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+z_index = 999
+position = Vector2(329, -45)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("3_umxwp")
+player = NodePath("../Player")
+
 [node name="InitialStreet" parent="." instance=ExtResource("1_py4xi")]
 y_sort_enabled = true
 position = Vector2(112, -11)
 
 [node name="Player" parent="." instance=ExtResource("1_ciqur")]
 z_index = 10
-position = Vector2(114, 30)
+position = Vector2(133, 16)
 scale = Vector2(1.5, 1.5)
 SpeedBase = 4000.0
 SpeedMul = 1.5
 AnimMul = 1.5
-
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-z_index = 999
-position = Vector2(329, -18)
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("3_umxwp")
-player = NodePath("../Player")
