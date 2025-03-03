@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://dmleay567gnlq"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_yrsc7"]
+[ext_resource type="Script" uid="uid://c74si3dsons4r" path="res://scripts/player.gd" id="1_yrsc7"]
 [ext_resource type="Texture2D" uid="uid://cw3hqlif840i3" path="res://assets/sprites/Espronceda/idle/front.png" id="2_7kn1s"]
 [ext_resource type="Texture2D" uid="uid://db8ta6lkg347k" path="res://assets/sprites/Snoblin_Prototype_Character/Assets/Prototype_Character/Prototype_Character.png" id="2_43b4b"]
 [ext_resource type="Texture2D" uid="uid://c30qcomsvchti" path="res://assets/sprites/Snoblin_Prototype_Character/Assets/Prototype_Character/image.png" id="3_n8weo"]
@@ -222,7 +222,6 @@ height = 10.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimatedSprite")]
 y_sort_enabled = true
-position = Vector2(548, 341)
 scale = Vector2(1.75, 1.75)
 script = ExtResource("1_yrsc7")
 SpeedMul = 1.5

@@ -38,3 +38,5 @@ func _physics_process(delta: float) -> void:
 		AnimatedSprite.animation = "run" + prevDirection
 
 	move_and_slide()
+	
+	
