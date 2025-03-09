@@ -299,6 +299,9 @@ z_index = 1
 position = Vector2(-64, -21)
 script = null
 
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+animation = &"runDown"
+
 [node name="goodByeText" parent="." instance=ExtResource("4_16jfe")]
 visible = false
 anchors_preset = 4
