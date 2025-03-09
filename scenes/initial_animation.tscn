@@ -299,9 +299,6 @@ z_index = 1
 position = Vector2(-64, -21)
 script = null
 
-[node name="AnimatedSprite2D" parent="Player" index="0"]
-animation = &"runDown"
-
 [node name="goodByeText" parent="." instance=ExtResource("4_16jfe")]
 visible = false
 anchors_preset = 4
@@ -331,7 +328,7 @@ size_flags_horizontal = 0
 secPerChar = 0.05
 
 [node name="Body" parent="goHomeText" index="0"]
-text = "Debería ir a casa, ya es tarde…"
+text = "Debería ir a casa, ya es tarde..."
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
