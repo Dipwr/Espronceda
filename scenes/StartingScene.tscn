@@ -20,6 +20,8 @@ position = Vector2(-122, 12)
 zoom = Vector2(2.2, 2.2)
 script = ExtResource("3_umxwp")
 player = NodePath("../Player")
+limRight = -122.0
+limLeft = 346.0
 
 [node name="InitialStreet" parent="." instance=ExtResource("1_py4xi")]
 

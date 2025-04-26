@@ -294,6 +294,30 @@ tracks/22/keys = {
 "update": 0,
 "values": [1.0, 1.0, 0.0]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Control2:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 11.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Control:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 11.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_rtbm6"]
 length = 0.001
@@ -573,6 +597,30 @@ tracks/22/keys = {
 "update": 0,
 "values": [0.5]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Control2:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Control:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_alnf3"]
 _data = {
@@ -831,7 +879,7 @@ texture = ExtResource("10_2jjjd")
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fv47o"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0uu6"]
 texture = ExtResource("11_2jjjd")
 0:0/0 = 0
 1:0/0 = 0
@@ -914,8 +962,11 @@ texture = ExtResource("11_2jjjd")
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 5.85528, 3.66688, 8, -1.03738, 8, 8, 1.51759)
 7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 5.97747, -8, 5.91638, -8, 1.3343, 8, 1.27321)
 8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.63977, -0.182061, 8, -4.76414, 8, -8, 5.97747)
 9:5/0 = 0
 10:5/0 = 0
 12:5/0 = 0
@@ -929,8 +980,10 @@ texture = ExtResource("11_2jjjd")
 4:6/0 = 0
 5:6/0 = 0
 6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.91126, 8, -0.915193, 8, -0.73191, -8, 3.91126, -8)
 7:6/0 = 0
 8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.10092, 8, -5.06961, 8, -5.1307, -8, 1.03983, -8)
 9:6/0 = 0
 10:6/0 = 0
 12:6/0 = 0
@@ -944,8 +997,11 @@ texture = ExtResource("11_2jjjd")
 4:7/0 = 0
 5:7/0 = 0
 6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.90637, -4.83134, 8, -4.82889, 8, 1.15102, -0.73191, 1.21211, -0.73191, -8, 3.84528, -8)
 7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.88999, 8, -4.82889, 8, 8, -8, 8)
 8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.487533, -0.987281, -8, -0.987281, -8, -4.83622, -4.88632, -4.77513, -5.06961, -8, -0.609721, -8)
 9:7/0 = 0
 10:7/0 = 0
 12:7/0 = 0
@@ -959,7 +1015,9 @@ texture = ExtResource("11_2jjjd")
 4:8/0 = 0
 5:8/0 = 0
 6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.44793, 2.25561, -4.56374, 4.14953, -8, 5.00485, -8, -8, 3.80618, -8, 2.33992, -2.20428)
 7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.07305, 2.74436, -0.0427637, 0.728248, -1.99778, -3.54836, -3.46405, -8, 8, -8, 8, 4.63828)
 8:8/0 = 0
 9:8/0 = 0
 10:8/0 = 0
@@ -973,7 +1031,9 @@ texture = ExtResource("11_2jjjd")
 3:9/0 = 0
 4:9/0 = 0
 6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.37852, 5.31032, 3.74508, 8, -8, 8, -8, -4.46477, -4.56374, -3.54836, 0.690369, 0.789342)
 7:9/0 = 0
+7:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.10309, 8, 8, -3.96991, 8, -3.60334, 5.24434, -2.44255, -0.803998, 1.40639, -3.91981)
 8:9/0 = 0
 9:9/0 = 0
 10:9/0 = 0
@@ -1120,9 +1180,10 @@ texture = ExtResource("11_2jjjd")
 4:20/0 = 0
 5:20/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_x0uu6"]
+[sub_resource type="TileSet" id="TileSet_1ouyt"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bbpjy")
-sources/1 = SubResource("TileSetAtlasSource_fv47o")
+sources/1 = SubResource("TileSetAtlasSource_x0uu6")
 
 [node name="FallingAnimation" type="Node"]
 script = ExtResource("1_bbpjy")
@@ -1188,20 +1249,21 @@ z_index = 1
 offset_left = -173.0
 offset_top = 271.0
 offset_right = -131.0
-offset_bottom = 292.0
+offset_bottom = 286.0
 scale = Vector2(8.39451, 4.73832)
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 z_index = 1
-offset_left = -172.0
-offset_top = 459.0
-offset_right = -130.0
-offset_bottom = 480.0
+offset_left = -174.0
+offset_top = 460.0
+offset_right = -132.0
+offset_bottom = 481.0
 scale = Vector2(8.39451, 4.73832)
 color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1411,6 +1473,7 @@ offset_right = -90.0
 offset_bottom = 435.0
 
 [node name="Control2" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 555.0
@@ -1620,9 +1683,9 @@ offset_top = 405.0
 offset_right = -90.0
 offset_bottom = 435.0
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD6/xcAAQAGAAUAAAD7/xcAAQAHAAUAAAD8/xcAAQAHAAUAAAD9/xcAAQAHAAUAAAD+/xcAAQAHAAUAAAD//xcAAQAHAAUAAAAAABcAAQAHAAUAAAABABcAAQAHAAUAAAACABcAAQAHAAUAAAADABcAAQAHAAUAAAAEABcAAQAHAAUAAAAFABcAAQAIAAUAAAAKABgAAQAHAAUAAAAIABgAAQAHAAUAAAAJABgAAQAHAAUAAAAGABgAAQAHAAUAAAAHABgAAQAHAAUAAAAEABgAAQAHAAYAAAAFABgAAQAHAAgAAAACABgAAQAHAAYAAAADABgAAQAHAAYAAAAAABgAAQAHAAYAAAABABgAAQAHAAYAAAD//xgAAQAHAAYAAAD9/xgAAQAHAAYAAAD+/xgAAQAHAAYAAAD7/xgAAQAHAAYAAAD8/xgAAQAHAAYAAAD6/xgAAQAGAAYAAAD6/xkAAQAGAAYAAAD7/xkAAQAHAAYAAAD8/xkAAQAHAAYAAAD9/xkAAQAHAAYAAAD+/xkAAQAHAAYAAAD//xkAAQAHAAYAAAAAABkAAQAHAAYAAAABABkAAQAHAAYAAAACABkAAQAHAAYAAAADABkAAQAHAAYAAAAEABkAAQAHAAYAAAAFABkAAQAHAAYAAAAGABkAAQAHAAYAAAAHABkAAQAHAAYAAAAIABkAAQAHAAYAAAAJABkAAQAHAAYAAAAKABkAAQAHAAYAAAAKABoAAQAHAAcAAAAIABoAAQAHAAcAAAAJABoAAQAHAAcAAAAGABoAAQAHAAcAAAAHABoAAQAHAAcAAAAEABoAAQAHAAYAAAAFABoAAQAHAAkAAAACABoAAQAHAAYAAAADABoAAQAHAAYAAAAAABoAAQAHAAYAAAABABoAAQAHAAYAAAD+/xoAAQAHAAYAAAD//xoAAQAHAAYAAAD9/xoAAQAHAAYAAAD7/xoAAQAHAAYAAAD8/xoAAQAHAAYAAAD6/xoAAQAGAAYAAAD6/xsAAQAGAAcAAAD7/xsAAQAHAAcAAAD8/xsAAQAHAAcAAAD9/xsAAQAHAAcAAAD+/xsAAQAHAAcAAAD//xsAAQAHAAcAAAAAABsAAQAHAAcAAAABABsAAQAHAAcAAAACABsAAQAHAAcAAAADABsAAQAHAAcAAAAEABsAAQAHAAcAAAAFABsAAQAIAAcAAAA=")
-tile_set = SubResource("TileSet_x0uu6")
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5/xYAAQAGAAYAAAD5/xcAAQAGAAYAAAD5/xgAAQAGAAYAAAD5/xkAAQAGAAYAAAD5/xoAAQAGAAYAAAD5/xsAAQAGAAcAAAD6/xYAAQAHAAYAAAD6/xcAAQAHAAYAAAD6/xgAAQAHAAYAAAD6/xkAAQAHAAYAAAD6/xoAAQAHAAYAAAD6/xsAAQAHAAcAAAD7/xYAAQAHAAYAAAD7/xcAAQAHAAYAAAD7/xgAAQAHAAYAAAD7/xkAAQAHAAYAAAD7/xoAAQAHAAYAAAD7/xsAAQAHAAcAAAD8/xYAAQAHAAYAAAD8/xcAAQAHAAYAAAD8/xgAAQAHAAYAAAD8/xkAAQAHAAYAAAD8/xoAAQAHAAYAAAD8/xsAAQAHAAcAAAD9/xYAAQAHAAYAAAD9/xcAAQAHAAYAAAD9/xgAAQAHAAYAAAD9/xkAAQAHAAYAAAD9/xoAAQAHAAYAAAD9/xsAAQAHAAcAAAD+/xYAAQAHAAYAAAD+/xcAAQAHAAYAAAD+/xgAAQAHAAYAAAD+/xkAAQAHAAYAAAD+/xoAAQAHAAYAAAD+/xsAAQAHAAcAAAD//xYAAQAHAAYAAAD//xcAAQAHAAYAAAD//xgAAQAHAAYAAAD//xkAAQAHAAYAAAD//xoAAQAHAAYAAAD//xsAAQAHAAcAAAAAABYAAQAHAAYAAAAAABcAAQAHAAYAAAAAABgAAQAHAAYAAAAAABkAAQAHAAYAAAAAABoAAQAHAAYAAAAAABsAAQAHAAcAAAABABYAAQAHAAYAAAABABcAAQAHAAYAAAABABgAAQAHAAYAAAABABkAAQAHAAYAAAABABoAAQAHAAYAAAABABsAAQAHAAcAAAACABYAAQAHAAYAAAACABcAAQAHAAYAAAACABgAAQAHAAYAAAACABkAAQAHAAYAAAACABoAAQAHAAYAAAACABsAAQAHAAcAAAADABYAAQAHAAYAAAADABcAAQAHAAYAAAADABgAAQAHAAYAAAADABkAAQAHAAYAAAADABoAAQAHAAYAAAADABsAAQAHAAcAAAAEABYAAQAHAAgAAAAEABcAAQAHAAYAAAAEABgAAQAHAAYAAAAEABkAAQAHAAYAAAAEABoAAQAHAAkAAAAEABsAAQAIAAcAAAAFABcAAQAHAAgAAAAFABgAAQAHAAYAAAAFABkAAQAHAAkAAAAFABoAAQAIAAcAAAAGABgAAQAHAAYAAAAGABkAAQAHAAcAAAAHABgAAQAHAAYAAAAHABkAAQAHAAcAAAAIABgAAQAHAAYAAAAIABkAAQAHAAcAAAAJABgAAQAHAAYAAAAJABkAAQAHAAcAAAAKABgAAQAHAAYAAAAKABkAAQAHAAcAAAALABgAAQAHAAYAAAALABkAAQAHAAcAAAAMABgAAQAHAAYAAAAMABkAAQAHAAcAAAD5/xUAAQAGAAUAAAD6/xUAAQAHAAUAAAD7/xUAAQAHAAUAAAD8/xUAAQAHAAUAAAD9/xUAAQAHAAUAAAD+/xUAAQAHAAUAAAD//xUAAQAHAAUAAAAAABUAAQAHAAUAAAABABUAAQAHAAUAAAACABUAAQAHAAUAAAADABUAAQAHAAUAAAAEABUAAQAIAAUAAAAFABYAAQAIAAUAAAAGABcAAQAHAAUAAAAHABcAAQAHAAUAAAAIABcAAQAHAAUAAAAJABcAAQAHAAUAAAAKABcAAQAHAAUAAAALABcAAQAHAAUAAAAMABcAAQAHAAUAAAA=")
+tile_set = SubResource("TileSet_1ouyt")
 
 [node name="textBox" parent="." instance=ExtResource("12_fv47o")]
 visible = false

@@ -1,6 +1,8 @@
 extends Camera2D
 
 @export var player : CharacterBody2D
+@export var limRight : float
+@export var limLeft : float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,5 +10,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !(player.position.x <= -122) && !(player.position.x >= 346):
+	if !(player.position.x <= limRight) && !(player.position.x >= limLeft):
 		position.x = player.position.x

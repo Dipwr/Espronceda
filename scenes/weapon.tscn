@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5481ur22pl7o"]
+
+[ext_resource type="Texture2D" uid="uid://dt02g6lxpthch" path="res://assets/sprites/items/plumaPequeña.png" id="1_xasec"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxn4k"]
+radius = 3.0
+height = 26.0
+
+[node name="Pluma" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 2
+metadata/type = "weapon"
+metadata/damage = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_uxn4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+rotation = 1.5708
+texture = ExtResource("1_xasec")
