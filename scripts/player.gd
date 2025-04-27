@@ -5,11 +5,47 @@ extends CharacterBody2D
 @export var AnimMul = 2.0
 @export var AnimatedSprite : AnimatedSprite2D
 
+@export var disableSword :bool = false
+
 
 var prevDirection = "Down"
 var speed = 300.0
 
+var canAttack: bool = true
+var canCombo: bool = false
+var canSpin: bool = false
+
+var hasComboed: bool = false
+var hasSpun: bool = false
+
 func _physics_process(delta: float) -> void:
+	if(disableSword):
+		$Pluma.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		$Pluma.process_mode = Node.PROCESS_MODE_INHERIT
+		
+	if Input.is_action_pressed("gameAttack") and canAttack:
+		if canCombo:
+			$AnimationPlayer.play("attack2")
+			$attackCooldown.start()
+			$spinTimer.start()
+			canAttack = false
+			canSpin = true
+			hasComboed = true
+		elif canSpin:
+			$AnimationPlayer.play("attack3")
+			$spinCooldown.start()
+			canAttack = false
+			hasSpun = true
+		else:
+			$AnimationPlayer.play("attack1")
+			$attackCooldown.start()
+			$comboTimer.start()
+			canAttack = false
+			canCombo = true
+			hasComboed = false
+			hasSpun = false
+	
 	if Input.is_action_pressed("gameSprint"):
 		speed = SpeedBase * SpeedMul
 		AnimatedSprite.speed_scale = AnimMul
@@ -39,4 +75,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+func _on_attack_cooldown_timeout() -> void:
+	canAttack = true
+
+func _on_spin_cooldown_timeout() -> void:
+	canAttack = true
+
+func _on_combo_timer_timeout() -> void:
+	canCombo = false
+	if !hasComboed:
+		$Pluma.visible = false
+
+func _on_spin_timer_timeout() -> void:
+	canSpin = false
+	if !hasSpun:
+		$Pluma.visible = false
 	

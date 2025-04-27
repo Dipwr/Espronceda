@@ -56,7 +56,6 @@ shape = SubResource("WorldBoundaryShape2D_gd5lm")
 [node name="Player" parent="." instance=ExtResource("1_ciqur")]
 z_index = 10
 position = Vector2(-64, 69)
-SpeedBase = 4000.0
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
