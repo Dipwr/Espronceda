@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://dda61l6ey6jd4"]
 
-[ext_resource type="Script" uid="uid://btdncby8qb0tw" path="res://scenes/dash_tutorial.gd" id="1_qb0t2"]
+[ext_resource type="Script" uid="uid://btdncby8qb0tw" path="res://scripts/dash_tutorial.gd" id="1_qb0t2"]
 [ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_eeknv"]
 [ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_wr5i4"]
 [ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_mirq1"]

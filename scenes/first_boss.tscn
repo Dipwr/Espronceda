@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://u6hyixq0u3ok"]
 
-[ext_resource type="Script" uid="uid://cnirwv620x6po" path="res://scenes/first_boss.gd" id="1_1n0cs"]
+[ext_resource type="Script" uid="uid://cnirwv620x6po" path="res://scripts/first_boss.gd" id="1_1n0cs"]
 [ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_il7an"]
 [ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_q3e48"]
 [ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_e754o"]
