@@ -373,6 +373,8 @@ height = 26.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_md0e3")
+metadata/type = "enemy"
+metadata/damage = 25
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

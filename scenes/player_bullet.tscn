@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://brvbom8g7n7ki"]
+[gd_scene load_steps=4 format=3 uid="uid://gomksvjlo30r"]
 
-[ext_resource type="Script" uid="uid://mgg0ec25w8oa" path="res://scripts/bullet.gd" id="1_v8qja"]
-[ext_resource type="Texture2D" uid="uid://dt02g6lxpthch" path="res://assets/sprites/items/plumaPequeña.png" id="2_y25gk"]
+[ext_resource type="Script" uid="uid://d120c8vub425u" path="res://scripts/player_bullet.gd" id="1_46jqs"]
+[ext_resource type="Texture2D" uid="uid://dt02g6lxpthch" path="res://assets/sprites/items/plumaPequeña.png" id="2_0cue5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
 size = Vector2(6.72673, 36)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Playerbullet" type="CharacterBody2D"]
 scale = Vector2(0.3, 0.3)
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_v8qja")
+script = ExtResource("1_46jqs")
 metadata/type = "enemy"
 metadata/damage = 20
 
@@ -22,10 +22,10 @@ shape = SubResource("RectangleShape2D_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("2_y25gk")
+texture = ExtResource("2_0cue5")
 
 [node name="Timeout" type="Timer" parent="."]
-wait_time = 2.75
+wait_time = 0.75
 one_shot = true
 autostart = true
 

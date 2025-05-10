@@ -340,9 +340,7 @@ z_index = 10
 position = Vector2(-220, 5)
 
 [node name="AnimatedSprite2D" parent="Player" index="1"]
-animation = &"idleDown"
 autoplay = "idleRight"
-frame_progress = 0.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
