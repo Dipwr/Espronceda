@@ -11,6 +11,8 @@ var bulletPath = preload("res://scenes/player_bullet.tscn")
 
 
 var prevDirection = "Down"
+var prevDirectionX = 0
+var prevDirectionY = 0
 var speed = 300.0
 
 var canAttack: bool = true
@@ -23,9 +25,9 @@ var isDashing: bool = false
 
 var dashUnlocked: bool = true
 
-var canShoot: bool = true
+var shootUnlocked: bool = true
 
-var dashMultipier = 1
+var canShoot: bool = true
 
 var xDirection
 var yDirection
@@ -43,11 +45,8 @@ func _physics_process(delta: float) -> void:
 		canDash = false
 		$dashDuration.start()
 		$dashTimer.start()
-	if (isDashing):
-		dashMultipier = 3
-		$".".modulate = Color(1,0.2,0.2,1)
 	else:
-		if (Input.is_action_pressed("gameShoot") and canShoot):
+		if (Input.is_action_pressed("gameShoot") && canShoot && shootUnlocked):
 			fire()
 			$shootTimer.start()
 			canShoot = false
@@ -74,18 +73,31 @@ func _physics_process(delta: float) -> void:
 		
 		xDirection = Input.get_axis("gameLeft", "gameRight")
 		yDirection = Input.get_axis("gameUp", "gameDown")
-	
-	velocity.x = xDirection * speed * dashMultipier * delta * scale.x
-	velocity.y = yDirection * speed * dashMultipier * delta * scale.y
+		
+	if (isDashing):
+		velocity.x = prevDirectionX * speed * 3 * delta * scale.x
+		velocity.y = prevDirectionY * speed * 3 * delta * scale.y
+		$".".modulate = Color(1,0.2,0.2,1)
+	else:
+		velocity.x = xDirection * speed * delta * scale.x
+		velocity.y = yDirection * speed * delta * scale.y
 	
 	if xDirection == 1:
 		prevDirection = "Right"
+		prevDirectionX = 1
+		prevDirectionY = 0
 	if xDirection == -1:
 		prevDirection = "Left"
+		prevDirectionX = -1
+		prevDirectionY = 0
 	if yDirection == 1:
 		prevDirection = "Down"
+		prevDirectionY = 1
+		prevDirectionX = 0
 	if yDirection == -1:
 		prevDirection = "Up"
+		prevDirectionY = -1
+		prevDirectionX = 0
 	
 	if (xDirection == 0) and (yDirection == 0):
 		AnimatedSprite.animation = "idle" + prevDirection
@@ -105,11 +117,11 @@ func _on_combo_timer_timeout() -> void:
 
 func _on_ready() -> void:
 	dashUnlocked = get_parent().get_parent().get_meta("dashUnlocked")
+	shootUnlocked = get_parent().get_parent().get_meta("shootUnlocked")
 
 
 func _on_dash_duration_timeout() -> void:
 	isDashing = false
-	dashMultipier = 1
 	$".".modulate = Color(1,1,1,1)
 
 func _on_dash_timer_timeout() -> void:
@@ -128,7 +140,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func fire() -> void:
 	var bullet = bulletPath.instantiate()
 	bullet.pos = $".".global_position
-	bullet.rot = $".".global_rotation
+	bullet.dir = Vector2(prevDirectionX, prevDirectionY)
 	get_parent().add_child(bullet)
 
 

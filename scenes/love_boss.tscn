@@ -1,317 +1,396 @@
-[gd_scene load_steps=17 format=4 uid="uid://cnleatj0cqlpt"]
+[gd_scene load_steps=34 format=4 uid="uid://bc2iu8gym2f58"]
 
-[ext_resource type="Script" uid="uid://c6p5qpthdknev" path="res://scripts/love_second.gd" id="1_a4olt"]
-[ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_tkgh5"]
-[ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_hlbmd"]
-[ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_ke53u"]
-[ext_resource type="Texture2D" uid="uid://fwgm8jt213st" path="res://assets/tileMaps/gfx/Overworld.png" id="5_kks1o"]
-[ext_resource type="PackedScene" uid="uid://c3l3jq6si40go" path="res://scenes/enemy.tscn" id="6_acqi6"]
+[ext_resource type="Script" uid="uid://youoo5o1xfpk" path="res://scripts/love_boss.gd" id="1_sqqqu"]
+[ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_sqqqu"]
+[ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_m0cl0"]
+[ext_resource type="Texture2D" uid="uid://fwgm8jt213st" path="res://assets/tileMaps/gfx/Overworld.png" id="3_yno48"]
+[ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_x4rgg"]
+[ext_resource type="Texture2D" uid="uid://cik0xnq6nx4pd" path="res://assets/sprites/Snoblin_Prototype_Character/Assets/Prototype_Character/Prototype_Character_Blue.png" id="6_5nvuh"]
+[ext_resource type="Script" uid="uid://cac3xpsqpy44t" path="res://scripts/love_boss_ai.gd" id="6_sqqqu"]
+[ext_resource type="Texture2D" uid="uid://kvbc813f3mrn" path="res://assets/sprites/items/heart pixel art 16x16.png" id="8_1wo0l"]
+[ext_resource type="Texture2D" uid="uid://c1ntv1chfth63" path="res://assets/sprites/pixil-frame-0 (2).png" id="8_sqqqu"]
 
-[sub_resource type="Animation" id="Animation_a4olt"]
+[sub_resource type="Animation" id="Animation_4ra3w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy:position")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-43, 49)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Enemy2:position")
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(43, 79)]
+"update": 1,
+"values": [&"idle"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Enemy3:position")
+tracks/2/path = NodePath("Sprite2D3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(40, -15)]
+"values": [Vector2(4, 2)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Enemy4:position")
+tracks/3/path = NodePath("Sprite2D2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-40, -15)]
+"values": [Vector2(1, -1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Enemy5:position")
+tracks/4/path = NodePath("Sprite2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-40, -97)]
+"values": [Vector2(-3, 2)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Enemy6:position")
+tracks/5/path = NodePath("Sprite2D3:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(40, -97)]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Enemy/AnimatedSprite2D:flip_h")
+tracks/6/path = NodePath("Sprite2D2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Enemy2/AnimatedSprite2D:flip_h")
+tracks/7/path = NodePath("Sprite2D:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Enemy3/AnimatedSprite2D:flip_h")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Enemy4/AnimatedSprite2D:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Enemy5/AnimatedSprite2D:flip_h")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Enemy6/AnimatedSprite2D:flip_h")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_ybxyi"]
-resource_name = "enemy_move"
-length = 1.4
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_5uy6h"]
+resource_name = "dashDown"
+length = 0.8
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Enemy:position")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-43, 49), Vector2(40, 49), Vector2(40, 49), Vector2(-40, 49), Vector2(-40, 49)]
+"values": [Color(1, 1, 1, 1), Color(1, 0.346577, 0.280009, 1), Color(1, 0.346577, 0.280009, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Enemy2:position")
+tracks/1/path = NodePath("Sprite2D3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(43, 79), Vector2(-41, 79), Vector2(-41, 79), Vector2(39, 79), Vector2(39, 79)]
+"values": [Vector2(4, -2), Vector2(4, -2), Vector2(4, -35)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Enemy3:position")
+tracks/2/path = NodePath("Sprite2D2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.705, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.45, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(40, -15), Vector2(-40, -15), Vector2(-40, -15), Vector2(40, -15), Vector2(-40, -15), Vector2(-40, -15)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, -33), Vector2(1, 1), Vector2(1, -33)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Enemy4:position")
+tracks/3/path = NodePath("Sprite2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.705, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.55, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-40, -15), Vector2(-40, -97), Vector2(-40, -97), Vector2(-40, -15), Vector2(-40, -97), Vector2(-40, -97)]
+"values": [Vector2(-3, -2), Vector2(-3, -2), Vector2(-3, -35), Vector2(-3, -2), Vector2(-3, -35)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Enemy5:position")
+tracks/4/path = NodePath("Sprite2D3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.705, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-40, -97), Vector2(40, -97), Vector2(40, -97), Vector2(-40, -97), Vector2(40, -97), Vector2(40, -97)]
+"values": [false, true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Enemy6:position")
+tracks/5/path = NodePath("Sprite2D2:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.705, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.45, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(40, -97), Vector2(40, -15), Vector2(40, -15), Vector2(40, -97), Vector2(40, -15), Vector2(40, -15)]
+"values": [false, true, false, true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Enemy/AnimatedSprite2D:flip_h")
+tracks/6/path = NodePath("Sprite2D:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Enemy2/AnimatedSprite2D:flip_h")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Enemy3/AnimatedSprite2D:flip_h")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Enemy4/AnimatedSprite2D:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Enemy5/AnimatedSprite2D:flip_h")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Enemy6/AnimatedSprite2D:flip_h")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.4, 0.55, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [false, true, false, true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkgh5"]
+[sub_resource type="Animation" id="Animation_c4w8v"]
+resource_name = "dashUp"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.346577, 0.280009, 1), Color(1, 0.346577, 0.280009, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 2), Vector2(4, 2), Vector2(4, 35)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, 33), Vector2(1, -1), Vector2(1, 33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.55, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, 2), Vector2(-3, 2), Vector2(-3, 35), Vector2(-3, 2), Vector2(-3, 35)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.6, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [false, true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.55, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_md0e3"]
+resource_name = "hit"
+length = 0.15
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uy6h"]
 _data = {
-&"RESET": SubResource("Animation_a4olt"),
-&"enemy_move": SubResource("Animation_ybxyi")
+&"RESET": SubResource("Animation_4ra3w"),
+&"dashDown": SubResource("Animation_5uy6h"),
+&"dashUp": SubResource("Animation_c4w8v"),
+&"hit": SubResource("Animation_md0e3")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dkmk"]
-texture = ExtResource("3_hlbmd")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4rgg"]
+size = Vector2(19, 19)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c4w8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("6_5nvuh")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("6_5nvuh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("6_5nvuh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
+atlas = ExtResource("6_5nvuh")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmurh"]
+atlas = ExtResource("8_sqqqu")
+region = Rect2(5, 0, 95, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4w8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md484")
+}],
+"loop": false,
+"name": &"die",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmurh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xwavj"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e754o"]
+radius = 26.5047
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj3y3"]
+size = Vector2(57, 27)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e754o"]
+radius = 50.0
+height = 204.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kutkh"]
+radius = 86.0
+height = 288.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqqqu"]
+size = Vector2(20, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cl0"]
+size = Vector2(321, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqqqu"]
+texture = ExtResource("3_m0cl0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -322,8 +401,8 @@ texture = ExtResource("3_hlbmd")
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qesp"]
-texture = ExtResource("4_ke53u")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0cl0"]
+texture = ExtResource("4_x4rgg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -625,8 +704,8 @@ texture = ExtResource("4_ke53u")
 4:20/0 = 0
 5:20/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsh61"]
-texture = ExtResource("5_kks1o")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4rgg"]
+texture = ExtResource("3_yno48")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1717,52 +1796,25 @@ texture = ExtResource("5_kks1o")
 0:35/0 = 0
 1:35/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_k2cup"]
+[sub_resource type="TileSet" id="TileSet_hmurh"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8dkmk")
-sources/1 = SubResource("TileSetAtlasSource_6qesp")
-sources/2 = SubResource("TileSetAtlasSource_jsh61")
+sources/0 = SubResource("TileSetAtlasSource_sqqqu")
+sources/1 = SubResource("TileSetAtlasSource_m0cl0")
+sources/2 = SubResource("TileSetAtlasSource_x4rgg")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nneva"]
-size = Vector2(20, 313)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsh61"]
-size = Vector2(228, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4crtq"]
-size = Vector2(61, 20)
-
-[node name="love_second" type="Node2D"]
-script = ExtResource("1_a4olt")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_tkgh5")
-}
-autoplay = "enemy_move"
+[node name="firstBoss" type="Node2D"]
+script = ExtResource("1_sqqqu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
 zoom = Vector2(2.5, 2.5)
 
-[node name="Player" parent="." instance=ExtResource("2_tkgh5")]
+[node name="Player" parent="." instance=ExtResource("2_sqqqu")]
 z_index = 10
-position = Vector2(0, 121)
+position = Vector2(0, 110)
 
 [node name="AnimatedSprite2D" parent="Player" index="1"]
-autoplay = "idleUp"
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-z_index = -1
-position = Vector2(0, -8)
-tile_map_data = PackedByteArray("AAD+/wgAAgAIAAkAAAD//wgAAgAIAAoAAAAAAAgAAgAIAAoAAAABAAgAAgAIAAkAAAD+/wcAAgAHAAoAAAD//wcAAgAIAAoAAAAAAAcAAgAIAAoAAAABAAcAAgAIAAkAAAD+/wYAAgAHAAkAAAD//wYAAgAIAAoAAAAAAAYAAgAHAAoAAAABAAYAAgAHAAkAAAD+/wUAAgAHAAkAAAD//wUAAgAIAAkAAAAAAAUAAgAIAAkAAAABAAUAAgAIAAkAAAD+/wQAAgAHAAoAAAD//wQAAgAIAAoAAAAAAAQAAgAHAAkAAAABAAQAAgAHAAoAAAD+/wMAAgAIAAkAAAD+/wEAAgAHAAoAAAD+/wIAAgAHAAkAAAD//wIAAgAIAAkAAAD//wMAAgAIAAkAAAAAAAMAAgAHAAkAAAAAAAIAAgAIAAoAAAAAAAEAAgAIAAoAAAD//wEAAgAIAAoAAAABAAMAAgAIAAoAAAABAAIAAgAIAAoAAAABAAEAAgAIAAoAAAABAAAAAgAHAAoAAAAAAAAAAgAIAAkAAAD//wAAAgAIAAoAAAD+/wAAAgAHAAkAAAD9/wMAAgAIAAoAAAD8/wMAAgAIAAkAAAD7/wMAAgAHAAoAAAD6/wMAAgAIAAoAAAD5/wMAAgAHAAkAAAD4/wMAAgAIAAoAAAD3/wMAAgAHAAkAAAD2/wMAAgAIAAkAAAD0/wMAAgAHAAoAAAD1/wMAAgAIAAkAAAD0/wIAAgAIAAkAAAD0/wEAAgAIAAoAAAD0/wAAAgAHAAkAAAD0////AgAHAAkAAAD9/wEAAgAIAAkAAAD8/wEAAgAIAAkAAAD7/wEAAgAIAAkAAAD6/wEAAgAIAAkAAAD5/wEAAgAIAAoAAAD4/wEAAgAHAAkAAAD3/wEAAgAQAB8AAAD2/wEAAgAPAB8AAAD1/wEAAgAOAB8AAAD1/wIAAgAHAAoAAAD2/wIAAgAIAAoAAAD3/wIAAgAIAAoAAAD4/wIAAgAIAAoAAAD5/wIAAgAIAAoAAAD6/wIAAgAIAAoAAAD7/wIAAgAHAAoAAAD8/wIAAgAHAAkAAAD9/wIAAgAHAAoAAAD1/wAAAgAOAB4AAAD2/wAAAgAPAB4AAAD1////AgAOAB0AAAD2////AgAPAB0AAAD1//7/AgAHAAoAAAD2//7/AgAIAAoAAAD3//7/AgAIAAkAAAD4//7/AgAHAAkAAAD5//7/AgAHAAoAAAD6//7/AgAHAAoAAAD7//7/AgAHAAoAAAD8//7/AgAHAAkAAAD9//7/AgAHAAkAAAD+//7/AgAIAAkAAAD///7/AgAIAAkAAAAAAP7/AgAHAAoAAAABAP7/AgAIAAkAAAACAP7/AgAHAAoAAAACAP3/AgAIAAoAAAD+//3/AgAIAAoAAAD///3/AgAIAAkAAAAAAP3/AgAHAAoAAAABAP3/AgAIAAoAAAADAP3/AgAHAAoAAAAEAP3/AgAIAAoAAAAFAP3/AgAOAB4AAAAGAP3/AgAPAB4AAAAHAP3/AgAQAB4AAAAIAP3/AgAHAAoAAAAJAP3/AgAHAAoAAAAKAP3/AgAHAAoAAAADAP7/AgAIAAkAAAAEAP7/AgAHAAoAAAAFAP7/AgAOAB8AAAAGAP7/AgAPAB8AAAAHAP7/AgAQAB8AAAAIAP7/AgAIAAkAAAAJAP7/AgAHAAoAAAAKAP7/AgAIAAkAAAAJAPz/AgAIAAkAAAAJAPv/AgARACEAABAKAPv/AgAQACEAABAKAPz/AgAHAAoAAAAJAPr/AgARACAAABAKAPr/AgAQACAAABAIAPr/AgASACAAABAHAPr/AgAIAAoAAAAGAPr/AgAIAAkAAAAFAPr/AgACAB4AAAAEAPr/AgABAB4AAAADAPr/AgAAAB4AAAACAPr/AgAIAAoAAAABAPr/AgAHAAoAAAAAAPr/AgAIAAkAAAD///r/AgAIAAkAAAD0//7/AgAHAAkAAAD+//r/AgAHAAkAAAD9/wAAAgAIAAkAAAD8/wAAAgAIAAoAAAD7/wAAAgAHAAkAAAD6/wAAAgAIAAoAAAD5/wAAAgAHAAoAAAD4/wAAAgAHAAoAAAD3/wAAAgAQAB4AAAD3////AgAQAB0AAAD4////AgAHAAkAAAD5////AgAIAAoAAAD6////AgAIAAkAAAD7////AgAIAAkAAAD8////AgAIAAoAAAD9////AgAHAAkAAAD+////AgAIAAkAAAD/////AgAHAAoAAAAAAP//AgAIAAkAAAABAP//AgAHAAkAAAACAP//AgAHAAoAAAADAP//AgAHAAoAAAAEAP//AgAIAAoAAAAFAP//AgAHAAoAAAAGAP//AgAIAAkAAAAHAP//AgAHAAoAAAAIAP//AgAIAAoAAAAJAP//AgAHAAkAAAAKAP//AgAIAAkAAAALAP//AgAIAAoAAAALAPr/AgAHAAkAAAALAPv/AgAIAAkAAAALAPz/AgAIAAkAAAALAP3/AgAIAAkAAAALAP7/AgAHAAkAAAD+//v/AgAHAAkAAAD///v/AgAHAAoAAAAAAPv/AgAIAAkAAAABAPv/AgAHAAoAAAACAPv/AgAHAAoAAAADAPv/AgAAAB8AAAAEAPv/AgABAB8AAAAFAPv/AgACAB8AAAAGAPv/AgAIAAoAAAAHAPv/AgAIAAkAAAAIAPv/AgASACEAABAIAPz/AgAHAAoAAAD+//z/AgAIAAoAAAD///z/AgAHAAoAAAAAAPz/AgAIAAoAAAABAPz/AgAHAAkAAAACAPz/AgAHAAoAAAADAPz/AgAHAAoAAAAEAPz/AgAIAAkAAAAFAPz/AgAOAB0AAAAGAPz/AgAPAB0AAAAHAPz/AgAQAB0AAAD0/wQAAgAIAAoAAAD0/wUAAgAIAAoAAAD1/wQAAgAOAB0AAAD1/wUAAgAOAB4AAAD2/wQAAgAPAB0AAAD2/wUAAgAPAB4AAAD3/wQAAgAQAB0AAAD3/wUAAgAQAB4AAAD4/wQAAgAHAAoAAAD4/wUAAgAIAAoAAAD5/wQAAgAIAAoAAAD5/wUAAgAHAAkAAAD6/wQAAgAIAAoAAAD6/wUAAgAIAAoAAAD7/wQAAgAQACAAAED7/wUAAgARACAAAED8/wQAAgAQACEAAED8/wUAAgARACEAAED9/wQAAgAHAAkAAAD9/wUAAgAHAAkAAAACAAAAAgAHAAkAAAACAAEAAgAHAAkAAAADAAAAAgAHAAkAAAADAAEAAgAIAAkAAAAEAAAAAgAIAAoAAAAEAAEAAgAIAAkAAAAFAAAAAgAIAAoAAAAFAAEAAgAIAAoAAAAGAAAAAgAIAAkAAAAGAAEAAgAIAAkAAAAHAAAAAgAIAAoAAAAHAAEAAgAIAAkAAAAIAAAAAgAHAAkAAAAIAAEAAgAHAAoAAAAJAAAAAgAHAAkAAAAJAAEAAgAHAAoAAAAKAAAAAgAAAB4AAFAKAAEAAgABAB4AAFALAAAAAgAAAB0AAFALAAEAAgABAB0AAFD+//n/AgAIAAoAAAD///n/AgAHAAoAAAAAAPn/AgAIAAkAAAABAPn/AgAIAAoAAAD+//j/AgAIAAkAAAD///j/AgAHAAkAAAAAAPj/AgAHAAkAAAABAPj/AgAIAAkAAAACAAIAAgAHAAkAAAADAAIAAgAIAAkAAAAEAAIAAgAIAAkAAAAFAAIAAgAHAAkAAAAGAAIAAgAIAAoAAAAEAAQAAgAIAAoAAAAEAAUAAgAIAAkAAAAFAAQAAgAHAAoAAAAFAAUAAgAHAAoAAAAHAAIAAgAIAAkAAAAHAAMAAgAHAAoAAAAHAAQAAgAIAAoAAAAHAAUAAgAIAAkAAAAHAAYAAgAIAAoAAAAHAAcAAgAIAAoAAAAGAAcAAgAIAAoAAAAFAAcAAgAIAAkAAAAEAAcAAgAHAAkAAAADAAcAAgAIAAoAAAACAAcAAgAIAAkAAAACAAMAAgAIAAkAAAACAAQAAgAIAAkAAAACAAUAAgAHAAkAAAACAAYAAgAIAAkAAAAGAAMAAgAHAAoAAAAGAAQAAgAIAAkAAAAGAAUAAgAIAAoAAAAGAAYAAgAHAAoAAAADAAMAAgAIAAkAAAAEAAMAAgAIAAoAAAAFAAMAAgAHAAkAAAADAAQAAgAIAAoAAAADAAUAAgAHAAkAAAADAAYAAgAIAAkAAAAEAAYAAgAHAAoAAAAFAAYAAgAIAAkAAAACAAgAAgAIAAkAAAADAAgAAgAHAAoAAAAEAAgAAgAIAAoAAAAFAAgAAgAHAAkAAAAGAAgAAgAIAAkAAAAHAAgAAgAHAAkAAAAIAAgAAgAIAAkAAAAJAAgAAgAHAAkAAAAKAAgAAgAIAAoAAAALAAgAAgAIAAoAAAAMAAgAAgAIAAoAAAANAAgAAgAHAAoAAAAIAAIAAgAHAAoAAAAIAAMAAgAIAAkAAAAIAAQAAgAHAAkAAAAIAAUAAgAOAB0AAAAIAAYAAgAOAB4AAAAIAAcAAgAOAB8AAAAJAAIAAgAHAAoAAAAJAAMAAgAIAAoAAAAJAAQAAgAIAAkAAAAJAAUAAgAPAB0AAAAJAAYAAgAPAB4AAAAJAAcAAgAPAB8AAAAKAAIAAgACAB4AAFAKAAMAAgAHAAkAAAAKAAQAAgAIAAoAAAAKAAUAAgAQAB0AAAAKAAYAAgAQAB4AAAAKAAcAAgAQAB8AAAALAAIAAgACAB0AAFALAAMAAgAIAAkAAAALAAQAAgAHAAoAAAALAAUAAgAHAAkAAAALAAYAAgAHAAoAAAALAAcAAgAIAAkAAAAMAAIAAgAIAAkAAAAMAAMAAgAIAAoAAAAMAAQAAgAHAAoAAAAMAAUAAgAIAAkAAAAMAAYAAgAHAAoAAAAMAAcAAgAHAAkAAAANAAIAAgAHAAoAAAANAAMAAgAIAAoAAAANAAQAAgAHAAoAAAANAAUAAgAHAAoAAAANAAYAAgAHAAkAAAANAAcAAgAIAAoAAAAMAPj/AgAHAAkAAAAMAPn/AgAIAAoAAAAMAPr/AgAHAAkAAAAMAPv/AgAIAAoAAAAMAPz/AgAHAAkAAAAMAP3/AgAIAAoAAAAMAP7/AgAIAAkAAAAMAP//AgAHAAoAAAAMAAAAAgAHAAkAAAAMAAEAAgAIAAkAAAANAPj/AgAIAAoAAAANAPn/AgAHAAoAAAANAPr/AgAIAAkAAAANAPv/AgAHAAoAAAANAPz/AgAHAAoAAAANAP3/AgAIAAoAAAANAP7/AgAHAAkAAAANAP//AgAHAAkAAAANAAAAAgAHAAkAAAANAAEAAgAHAAkAAAAOAPj/AgAHAAoAAAAOAPn/AgAHAAkAAAAOAPr/AgAHAAkAAAAOAPv/AgAIAAkAAAAOAPz/AgAIAAkAAAAOAP3/AgAIAAoAAAAOAP7/AgAHAAkAAAAOAP//AgAHAAoAAAAOAAAAAgAIAAkAAAAOAAEAAgAHAAoAAAAOAAIAAgAHAAkAAAAOAAMAAgAIAAoAAAAOAAQAAgAHAAkAAAAOAAUAAgAIAAkAAAAOAAYAAgAIAAoAAAAOAAcAAgAHAAoAAAAOAAgAAgAHAAkAAAD7/wYAAgASACAAAED7/wcAAgAHAAkAAAD7/wgAAgAHAAoAAAD8/wYAAgASACEAAED8/wcAAgAIAAkAAAD8/wgAAgAIAAoAAAD9/wYAAgAIAAkAAAD9/wcAAgAIAAoAAAD9/wgAAgAHAAkAAAD0//r/AgAIAAkAAAD0//v/AgACAB0AAAD0//z/AgACAB4AAAD1//r/AgAHAAoAAAD1//v/AgAHAAkAAAD1//z/AgAHAAoAAAD2//r/AgAIAAkAAAD2//v/AgAIAAkAAAD2//z/AgAHAAoAAAD9//3/AgACAB4AAAD8//3/AgABAB4AAAD7//3/AgAAAB4AAAD6//3/AgAHAAoAAAD5//3/AgAHAAkAAAD4//3/AgAIAAkAAAD4//z/AgAIAAoAAAD4//v/AgARACEAAAD4//r/AgARACAAAAD4//n/AgAHAAoAAAD4//j/AgAHAAkAAAD5//j/AgAHAAoAAAD6//j/AgAIAAkAAAD7//j/AgAHAAkAAAD8//j/AgAIAAoAAAD9//j/AgAIAAkAAAD9//n/AgAIAAoAAAD9//r/AgAHAAkAAAD9//v/AgAHAAoAAAD9//z/AgACAB0AAAD5//n/AgAIAAoAAAD5//r/AgASACAAAAD5//v/AgASACEAAAD5//z/AgAHAAkAAAD6//z/AgAIAAoAAAD7//z/AgAAAB0AAAD8//z/AgABAB0AAAD8//v/AgAIAAoAAAD8//r/AgAHAAkAAAD8//n/AgAIAAkAAAD7//n/AgAHAAoAAAD6//n/AgAIAAoAAAD6//r/AgAHAAkAAAD6//v/AgAHAAoAAAD7//r/AgAHAAoAAAD7//v/AgAIAAoAAAD3//j/AgAHAAkAAAD3//n/AgAIAAkAAAD3//r/AgAQACAAAAD3//v/AgAQACEAAAD3//z/AgAHAAoAAADx//j/AgAIAAkAAADx//n/AgAHAAkAAADy//j/AgAHAAkAAADy//n/AgAHAAoAAADz//j/AgAIAAkAAADz//n/AgAHAAkAAAD0//j/AgAHAAoAAAD0//n/AgAIAAoAAAD1//j/AgAIAAoAAAD1//n/AgAHAAoAAAD2//j/AgAHAAoAAAD2//n/AgAIAAkAAADx//3/AgAHAAoAAADy//3/AgAHAAoAAADz//3/AgAIAAoAAAD0//3/AgAHAAoAAAD1//3/AgAHAAoAAAD2//3/AgAIAAkAAAD3//3/AgAHAAkAAADx//r/AgAHAAoAAADx//v/AgAHAAoAAADx//z/AgAHAAoAAADx//7/AgAIAAkAAADx////AgAHAAkAAADx/wAAAgAIAAkAAADx/wEAAgAHAAoAAADx/wIAAgAHAAoAAADx/wMAAgAIAAkAAADy//r/AgAIAAoAAADy//v/AgAAAB0AAADy//z/AgAAAB4AAADy//7/AgAHAAkAAADy////AgAHAAoAAADy/wAAAgAHAAkAAADy/wEAAgAHAAkAAADy/wIAAgAIAAkAAADy/wMAAgAIAAoAAADz//r/AgAHAAoAAADz//v/AgABAB0AAADz//z/AgABAB4AAADz//7/AgAIAAkAAADz////AgAHAAoAAADz/wAAAgAIAAkAAADz/wEAAgAHAAoAAADz/wIAAgAHAAoAAADz/wMAAgAIAAkAAADx/wQAAgAIAAoAAADx/wUAAgAIAAkAAADx/wYAAgAIAAkAAADx/wcAAgAHAAoAAADx/wgAAgAHAAoAAADy/wQAAgAIAAoAAADy/wUAAgAHAAkAAADy/wYAAgAHAAoAAADy/wcAAgAIAAkAAADy/wgAAgAHAAkAAADz/wQAAgAHAAkAAADz/wUAAgAHAAkAAADz/wYAAgAIAAkAAADz/wcAAgAHAAoAAADz/wgAAgAHAAoAAAD0/wYAAgAHAAoAAAD0/wcAAgAHAAoAAAD0/wgAAgAHAAkAAAD1/wYAAgAOAB8AAAD1/wcAAgAIAAkAAAD1/wgAAgAIAAoAAAD2/wYAAgAPAB8AAAD2/wcAAgAIAAkAAAD2/wgAAgAIAAkAAAD3/wYAAgAQAB8AAAD3/wcAAgAIAAoAAAD3/wgAAgAHAAkAAAD4/wYAAgAIAAoAAAD4/wcAAgAIAAkAAAD4/wgAAgAHAAkAAAD5/wYAAgAHAAoAAAD5/wcAAgAHAAoAAAD5/wgAAgAIAAkAAAD6/wYAAgAIAAkAAAD6/wcAAgAHAAoAAAD6/wgAAgAHAAoAAAACAPj/AgAHAAoAAAACAPn/AgAHAAoAAAADAPj/AgAIAAoAAAADAPn/AgAAAB0AAAAEAPj/AgAHAAkAAAAEAPn/AgABAB0AAAAFAPj/AgAIAAoAAAAFAPn/AgACAB0AAAAGAPj/AgAHAAkAAAAGAPn/AgAHAAoAAAAHAPj/AgAIAAkAAAAHAPn/AgAIAAkAAAAIAPj/AgAHAAoAAAAIAPn/AgAIAAoAAAAJAPj/AgAIAAoAAAAJAPn/AgAIAAoAAAAKAPj/AgAHAAkAAAAKAPn/AgAHAAkAAAALAPj/AgAIAAkAAAALAPn/AgAHAAkAAAA=")
-tile_set = SubResource("TileSet_k2cup")
-
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
-z_index = -1
-y_sort_enabled = true
-position = Vector2(0, -8)
-tile_map_data = PackedByteArray("AAD+/wkAAgAEABIAAAD+/wgAAgAEABIAAAD+/wcAAgAEABIAAAD+/wYAAgADABEAAAABAAkAAgAEABIAAAABAAgAAgAEABIAAAABAAcAAgAEABIAAAABAAYAAgACABEAAAD8/wUAAgAEABIAAAADAAUAAgAEABIAAAD8/wQAAgAEABIAAAD8/wMAAgAEABIAAAD8/wIAAgACABEAAAADAAQAAgAEABIAAAADAAMAAgAEABIAAAADAAIAAgADABEAAAABAAEAAgAEABIAAAD+/wAAAgADABEAAAABAAAAAgACABEAAAD+//n/AgADABIAAAD+//j/AgAEABIAAAABAPn/AgACABIAAAABAPj/AgAEABIAAAD+//f/AgAEABIAAAABAPf/AgAEABIAAAD+//3/AgAEABIAAAABAP3/AgAEABIAAAD+//v/AgAAABEAAAD+//z/AgAEABIAAAABAPv/AgAAABEAAAABAPz/AgAEABIAAAADAPr/AgAEABIAAAADAPv/AgAEABIAAAADAPz/AgAEABIAAAADAP3/AgAEABIAAAD8//r/AgAEABIAAAD8//v/AgAEABIAAAD8//z/AgAEABIAAAD8//3/AgAEABIAAAD8//7/AgAEABIAAAADAP7/AgAEABIAAAADAP//AgAEABIAAAD8////AgAEABIAAAD8/wYAAgACABIAAAD9/wIAAgAEABEAAAD9/wYAAgAEABEAAAD+/wIAAgADABIAAAABAAIAAgACABIAAAACAAIAAgAEABEAAAACAAYAAgAEABEAAAADAAYAAgADABIAAAD+/wEAAgAEABIAAAD8/wAAAgACABIAAAD9/wAAAgAEABEAAAD+//7/AgAAABIAAAABAP7/AgAAABIAAAACAAAAAgAEABEAAAADAAAAAgADABIAAAD8//n/AgACABEAAAD9//n/AgAEABEAAAACAPn/AgAEABEAAAADAPn/AgADABEAAAA=")
-tile_set = SubResource("TileSet_k2cup")
+autoplay = "idleRight"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -999
@@ -1772,104 +1824,167 @@ offset_right = 261.0
 offset_bottom = 158.0
 color = Color(0, 0, 0, 1)
 
-[node name="Enemy" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(-43, 49)
-scale = Vector2(1.5, 1.5)
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+script = ExtResource("6_sqqqu")
+health = 300
+metadata/type = "enemy"
+metadata/damage = 10
 
-[node name="AnimatedSprite2D" parent="Enemy" index="2"]
-flip_h = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+&"": SubResource("AnimationLibrary_5uy6h")
+}
 
-[node name="Enemy2" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(43, 79)
-scale = Vector2(1.5, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_x4rgg")
 
-[node name="Enemy3" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(40, -15)
-scale = Vector2(1.25, 1.25)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+material = SubResource("CanvasItemMaterial_c4w8v")
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_c4w8v")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
 
-[node name="Enemy4" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(-40, -15)
-scale = Vector2(1.25, 1.25)
+[node name="BulletOrigin" type="Node2D" parent="Enemy"]
+position = Vector2(-7, 0)
 
-[node name="Enemy5" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(-40, -97)
-scale = Vector2(1.25, 1.25)
+[node name="shootTimer" type="Timer" parent="Enemy"]
+wait_time = 1.5
+autostart = true
 
-[node name="AnimatedSprite2D" parent="Enemy5" index="2"]
-flip_h = false
+[node name="Area2D" type="Area2D" parent="Enemy"]
+collision_layer = 2
+collision_mask = 2
 
-[node name="Enemy6" parent="." instance=ExtResource("6_acqi6")]
-position = Vector2(40, -97)
-scale = Vector2(1.25, 1.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+shape = SubResource("CapsuleShape2D_xwavj")
 
-[node name="AnimatedSprite2D" parent="Enemy6" index="2"]
-flip_h = false
+[node name="deathTimer" type="Timer" parent="Enemy"]
+wait_time = 0.001
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+visible = false
+position = Vector2(-3, 2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_1wo0l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Enemy"]
+visible = false
+position = Vector2(1, -1)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_1wo0l")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Enemy"]
+visible = false
+position = Vector2(4, 2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_1wo0l")
+
+[node name="dashDirection" type="Node2D" parent="Enemy"]
+
+[node name="SafeZone" type="Area2D" parent="Enemy"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/SafeZone"]
+shape = SubResource("CircleShape2D_e754o")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, -7.5)
+shape = SubResource("RectangleShape2D_yj3y3")
+
+[node name="DashDuration" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Dash" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[node name="Inner" type="Area2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inner"]
+position = Vector2(0, -7)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e754o")
+
+[node name="Middle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kutkh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-240, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_nneva")
+shape = SubResource("RectangleShape2D_sqqqu")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(240, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_nneva")
+shape = SubResource("RectangleShape2D_sqqqu")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-76, -139)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-67, 0)
-shape = SubResource("RectangleShape2D_jsh61")
+shape = SubResource("RectangleShape2D_m0cl0")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(212, -139)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(-67, 0)
-shape = SubResource("RectangleShape2D_jsh61")
+position = Vector2(-68, 0)
+shape = SubResource("RectangleShape2D_m0cl0")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(-76, 139)
+position = Vector2(-76, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(-67, 0)
-shape = SubResource("RectangleShape2D_jsh61")
+shape = SubResource("RectangleShape2D_m0cl0")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2(212, 139)
+position = Vector2(212, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(-67, 0)
-shape = SubResource("RectangleShape2D_jsh61")
+position = Vector2(-113.5, 0)
+shape = SubResource("RectangleShape2D_m0cl0")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, 138)
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AADx//f/AgAHAAkAAADx//j/AgAHAAkAAADx//n/AgAHAAoAAADx//r/AgAIAAoAAADx//v/AgAIAAkAAADx//z/AgAHAAkAAADx//3/AgAHAAoAAADx//7/AgAHAAkAAADx////AgAHAAkAAADx/wAAAgAHAAoAAADx/wEAAgAIAAoAAADx/wIAAgAHAAoAAADx/wMAAgAHAAoAAADx/wQAAgAIAAkAAADx/wUAAgAHAAoAAADx/wYAAgAIAAoAAADx/wcAAgAIAAoAAADx/wgAAgAHAAkAAADy//f/AgAIAAkAAADy//j/AgAIAAkAAADy//n/AgAHAAkAAADy//r/AgAHAAoAAADy//v/AgAHAAkAAADy//z/AgAHAAkAAADy//3/AgAHAAoAAADy//7/AgAHAAoAAADy////AgAIAAkAAADy/wAAAgAIAAoAAADy/wEAAgAHAAoAAADy/wIAAgAHAAoAAADy/wMAAgAIAAoAAADy/wQAAgAIAAkAAADy/wUAAgAIAAkAAADy/wYAAgAHAAkAAADy/wcAAgAHAAoAAADy/wgAAgAIAAkAAADz//f/AgAHAAkAAADz//j/AgAHAAoAAADz//n/AgAIAAoAAADz//r/AgAIAAoAAADz//v/AgAIAAoAAADz//z/AgAHAAoAAADz//3/AgAHAAoAAADz//7/AgAHAAoAAADz////AgAHAAkAAADz/wAAAgAHAAoAAADz/wEAAgAHAAkAAADz/wIAAgAIAAkAAADz/wMAAgAHAAkAAADz/wQAAgAIAAoAAADz/wUAAgAHAAkAAADz/wYAAgAHAAoAAADz/wcAAgAHAAkAAADz/wgAAgAHAAkAAAD0//f/AgAIAAkAAAD0//j/AgAHAAoAAAD0//n/AgAIAAkAAAD0//r/AgAHAAkAAAD0//v/AgAIAAkAAAD0//z/AgAIAAkAAAD0//3/AgAHAAoAAAD0//7/AgAHAAoAAAD0////AgAHAAoAAAD0/wAAAgAHAAkAAAD0/wEAAgAIAAkAAAD0/wIAAgAHAAoAAAD0/wMAAgAIAAoAAAD0/wQAAgAHAAkAAAD0/wUAAgAIAAkAAAD0/wYAAgAIAAoAAAD0/wcAAgAIAAoAAAD0/wgAAgAIAAoAAAD1//f/AgAHAAkAAAD1//j/AgAIAAkAAAD1//n/AgAIAAoAAAD1//r/AgAHAAkAAAD1//v/AgAOAB0AAAD1//z/AgAOAB4AAAD1//3/AgAOAB4AAAD1//7/AgAOAB4AAAD1////AgAOAB4AAAD1/wAAAgAOAB4AAAD1/wEAAgAOAB4AAAD1/wIAAgAOAB4AAAD1/wMAAgAOAB4AAAD1/wQAAgAOAB8AAAD1/wUAAgAIAAkAAAD1/wYAAgAIAAkAAAD1/wcAAgAHAAkAAAD1/wgAAgAHAAoAAAD2//f/AgAIAAoAAAD2//j/AgAHAAoAAAD2//n/AgAHAAkAAAD2//r/AgAOAB0AAAD2//v/AgAPACEAAAD2//z/AgARAB0AAAD2//3/AgARAB4AAAD2//7/AgARAB0AAAD2////AgARAB4AAAD2/wAAAgARAB0AAAD2/wEAAgARAB4AAAD2/wIAAgARAB0AAAD2/wMAAgARAB4AAAD2/wQAAgAPACAAAAD2/wYAAgAIAAkAAAD2/wcAAgAHAAkAAAD2/wgAAgAHAAoAAAD3//f/AgAIAAkAAAD3//j/AgAIAAoAAAD3//n/AgAOAB0AAAD3//r/AgAPACEAAAD3//v/AgASAB4AAAD3//z/AgASAB0AAAD3//3/AgASAB4AAAD3//7/AgASAB0AAAD3////AgASAB4AAAD3/wAAAgASAB0AAAD3/wEAAgASAB4AAAD3/wIAAgASAB0AAAD3/wMAAgASAB4AAAD3/wQAAgASAB0AAAD3/wUAAgAPACAAAAD3/wYAAgAOAB8AAAD3/wcAAgAIAAkAAAD3/wgAAgAIAAoAAAD4//f/AgAIAAkAAAD4//j/AgAHAAkAAAD4//n/AgAPAB0AAAD4//r/AgARAB0AAAD4//v/AgARAB4AAAD4//z/AgARAB0AAAD4//3/AgARAB4AAAD4//7/AgARAB0AAAD4////AgARAB4AAAD4/wAAAgARAB0AAAD4/wEAAgARAB4AAAD4/wIAAgARAB0AAAD4/wMAAgARAB4AAAD4/wQAAgARAB0AAAD4/wUAAgARAB4AAAD4/wYAAgAPAB8AAAD4/wcAAgAIAAkAAAD4/wgAAgAHAAoAAAD5//f/AgAIAAkAAAD5//j/AgAIAAkAAAD5//n/AgAPAB0AAAD5//r/AgASAB0AAAD5//v/AgASAB4AAAD5//z/AgASAB0AAAD5//3/AgASAB4AAAD5//7/AgASAB0AAAD5////AgASAB4AAAD5/wAAAgASAB0AAAD5/wEAAgASAB4AAAD5/wIAAgASAB0AAAD5/wMAAgASAB4AAAD5/wQAAgASAB0AAAD5/wUAAgASAB4AAAD5/wYAAgAPAB8AAAD5/wcAAgAHAAoAAAD5/wgAAgAIAAkAAAD6//f/AgAIAAkAAAD6//j/AgAIAAkAAAD6//n/AgAPAB0AAAD6//r/AgARAB0AAAD6//v/AgARAB4AAAD6//z/AgARAB0AAAD6//3/AgARAB4AAAD6//7/AgARAB0AAAD6////AgARAB4AAAD6/wAAAgARAB0AAAD6/wEAAgARAB4AAAD6/wIAAgARAB0AAAD6/wMAAgARAB4AAAD6/wQAAgARAB0AAAD6/wUAAgARAB4AAAD6/wYAAgAPAB8AAAD6/wcAAgAHAAoAAAD6/wgAAgAHAAkAAAD7//f/AgAIAAoAAAD7//j/AgAIAAkAAAD7//n/AgAPAB0AAAD7//r/AgASAB0AAAD7//v/AgASAB4AAAD7//z/AgASAB0AAAD7//3/AgASAB4AAAD7//7/AgASAB0AAAD7////AgASAB4AAAD7/wAAAgASAB0AAAD7/wEAAgASAB4AAAD7/wIAAgASAB0AAAD7/wMAAgASAB4AAAD7/wQAAgASAB0AAAD7/wUAAgASAB4AAAD7/wYAAgAPAB8AAAD7/wcAAgAIAAkAAAD7/wgAAgAIAAkAAAD8//f/AgAHAAkAAAD8//j/AgAHAAkAAAD8//n/AgAPAB0AAAD8//r/AgARAB0AAAD8//v/AgARAB4AAAD8//z/AgARAB0AAAD8//3/AgARAB4AAAD8//7/AgARAB0AAAD8////AgARAB4AAAD8/wAAAgARAB0AAAD8/wEAAgARAB4AAAD8/wIAAgARAB0AAAD8/wMAAgARAB4AAAD8/wQAAgARAB0AAAD8/wUAAgARAB4AAAD8/wYAAgAPAB8AAAD8/wcAAgAHAAoAAAD8/wgAAgAHAAoAAAD9//f/AgAIAAoAAAD9//j/AgAIAAkAAAD9//n/AgAPAB0AAAD9//r/AgASAB0AAAD9//v/AgASAB4AAAD9//z/AgASAB0AAAD9//3/AgASAB4AAAD9//7/AgASAB0AAAD9////AgASAB4AAAD9/wAAAgASAB0AAAD9/wEAAgASAB4AAAD9/wIAAgASAB0AAAD9/wMAAgASAB4AAAD9/wQAAgASAB0AAAD9/wUAAgASAB4AAAD9/wYAAgAPAB8AAAD9/wcAAgAHAAoAAAD9/wgAAgAHAAkAAAD+//f/AgAHAAkAAAD+//j/AgAHAAkAAAD+//n/AgAPAB0AAAD+//r/AgARAB0AAAD+//v/AgARAB4AAAD+//z/AgARAB0AAAD+//3/AgARAB4AAAD+//7/AgARAB0AAAD+////AgARAB4AAAD+/wAAAgARAB0AAAD+/wEAAgARAB4AAAD+/wIAAgARAB0AAAD+/wMAAgARAB4AAAD+/wQAAgARAB0AAAD+/wUAAgARAB4AAAD+/wYAAgAPACAAAAD+/wcAAgAOAB4AAAD+/wgAAgAOAB4AAAD///f/AgAIAAoAAAD///j/AgAHAAkAAAD///n/AgAPAB0AAAD///r/AgASAB0AAAD///v/AgASAB4AAAD///z/AgASAB0AAAD///3/AgASAB4AAAD///7/AgASAB0AAAD/////AgASAB4AAAD//wAAAgASAB0AAAD//wEAAgASAB4AAAD//wIAAgASAB0AAAD//wMAAgASAB4AAAD//wQAAgASAB0AAAD//wUAAgASAB4AAAD//wYAAgARAB4AAAD//wcAAgARAB0AAAD//wgAAgARAB4AAAAAAPf/AgAHAAoAAAAAAPj/AgAHAAkAAAAAAPn/AgAPAB0AAAAAAPr/AgARAB0AAAAAAPv/AgARAB4AAAAAAPz/AgARAB0AAAAAAP3/AgARAB4AAAAAAP7/AgARAB0AAAAAAP//AgARAB4AAAAAAAAAAgARAB0AAAAAAAEAAgARAB4AAAAAAAIAAgARAB0AAAAAAAMAAgARAB4AAAAAAAQAAgARAB0AAAAAAAUAAgARAB4AAAAAAAYAAgASAB4AAAAAAAcAAgASAB0AAAAAAAgAAgASAB4AAAABAPf/AgAIAAkAAAABAPj/AgAHAAkAAAABAPn/AgAPAB0AAAABAPr/AgASAB0AAAABAPv/AgASAB4AAAABAPz/AgASAB0AAAABAP3/AgASAB4AAAABAP7/AgASAB0AAAABAP//AgASAB4AAAABAAAAAgASAB0AAAABAAEAAgASAB4AAAABAAIAAgASAB0AAAABAAMAAgASAB4AAAABAAQAAgASAB0AAAABAAUAAgASAB4AAAABAAYAAgAOACAAAAABAAcAAgAQAB4AAAABAAgAAgAQAB4AAAACAPf/AgAHAAkAAAACAPj/AgAIAAkAAAACAPn/AgAPAB0AAAACAPr/AgARAB0AAAACAPv/AgARAB4AAAACAPz/AgARAB0AAAACAP3/AgARAB4AAAACAP7/AgARAB0AAAACAP//AgARAB4AAAACAAAAAgARAB0AAAACAAEAAgARAB4AAAACAAIAAgARAB0AAAACAAMAAgARAB4AAAACAAQAAgARAB0AAAACAAUAAgARAB4AAAACAAYAAgAPAB8AAAACAAcAAgAHAAkAAAACAAgAAgAIAAkAAAADAPf/AgAHAAoAAAADAPj/AgAHAAoAAAADAPn/AgAPAB0AAAADAPr/AgASAB0AAAADAPv/AgASAB4AAAADAPz/AgASAB0AAAADAP3/AgASAB4AAAADAP7/AgASAB0AAAADAP//AgASAB4AAAADAAAAAgASAB0AAAADAAEAAgASAB4AAAADAAIAAgASAB0AAAADAAMAAgASAB4AAAADAAQAAgASAB0AAAADAAUAAgASAB4AAAADAAYAAgAPAB8AAAADAAcAAgAIAAkAAAADAAgAAgAHAAkAAAAEAPf/AgAHAAoAAAAEAPj/AgAHAAoAAAAEAPn/AgAPAB0AAAAEAPr/AgARAB0AAAAEAPv/AgARAB4AAAAEAPz/AgARAB0AAAAEAP3/AgARAB4AAAAEAP7/AgARAB0AAAAEAP//AgARAB4AAAAEAAAAAgARAB0AAAAEAAEAAgARAB4AAAAEAAIAAgARAB0AAAAEAAMAAgARAB4AAAAEAAQAAgARAB0AAAAEAAUAAgARAB4AAAAEAAYAAgAPAB8AAAAEAAcAAgAIAAkAAAAEAAgAAgAIAAoAAAAFAPf/AgAHAAoAAAAFAPj/AgAIAAkAAAAFAPn/AgAPAB0AAAAFAPr/AgASAB0AAAAFAPv/AgASAB4AAAAFAPz/AgASAB0AAAAFAP3/AgASAB4AAAAFAP7/AgASAB0AAAAFAP//AgASAB4AAAAFAAAAAgASAB0AAAAFAAEAAgASAB4AAAAFAAIAAgASAB0AAAAFAAMAAgASAB4AAAAFAAQAAgASAB0AAAAFAAUAAgASAB4AAAAFAAYAAgAPAB8AAAAFAAcAAgAHAAkAAAAFAAgAAgAIAAoAAAAGAPf/AgAHAAkAAAAGAPj/AgAIAAoAAAAGAPn/AgAPAB0AAAAGAPr/AgARAB0AAAAGAPv/AgARAB4AAAAGAPz/AgARAB0AAAAGAP3/AgARAB4AAAAGAP7/AgARAB0AAAAGAP//AgARAB4AAAAGAAAAAgARAB0AAAAGAAEAAgARAB4AAAAGAAIAAgARAB0AAAAGAAMAAgARAB4AAAAGAAQAAgARAB0AAAAGAAUAAgARAB4AAAAGAAYAAgAPAB8AAAAGAAcAAgAHAAoAAAAGAAgAAgAIAAkAAAAHAPf/AgAIAAoAAAAHAPj/AgAHAAkAAAAHAPn/AgAPAB0AAAAHAPr/AgASAB0AAAAHAPv/AgASAB4AAAAHAPz/AgASAB0AAAAHAP3/AgASAB4AAAAHAP7/AgASAB0AAAAHAP//AgASAB4AAAAHAAAAAgASAB0AAAAHAAEAAgASAB4AAAAHAAIAAgASAB0AAAAHAAMAAgASAB4AAAAHAAQAAgASAB0AAAAHAAUAAgASAB4AAAAHAAYAAgAPAB8AAAAHAAcAAgAHAAoAAAAHAAgAAgAHAAkAAAAIAPf/AgAHAAoAAAAIAPj/AgAHAAoAAAAIAPn/AgAQAB0AAAAIAPr/AgAOACEAAAAIAPv/AgARAB4AAAAIAPz/AgARAB0AAAAIAP3/AgARAB4AAAAIAP7/AgARAB0AAAAIAP//AgARAB4AAAAIAAAAAgARAB0AAAAIAAEAAgARAB4AAAAIAAIAAgARAB0AAAAIAAMAAgARAB4AAAAIAAQAAgARAB0AAAAIAAUAAgAOACAAAAAIAAYAAgAQAB8AAAAIAAcAAgAIAAoAAAAIAAgAAgAHAAkAAAAJAPf/AgAIAAoAAAAJAPj/AgAIAAkAAAAJAPn/AgAIAAoAAAAJAPr/AgAQAB0AAAAJAPv/AgAOACEAAAAJAPz/AgASAB0AAAAJAP3/AgASAB4AAAAJAP7/AgASAB0AAAAJAP//AgASAB4AAAAJAAAAAgASAB0AAAAJAAEAAgASAB4AAAAJAAIAAgASAB0AAAAJAAMAAgASAB4AAAAJAAQAAgAOACAAAAAJAAUAAgAQAB8AAAAJAAYAAgAIAAkAAAAJAAcAAgAIAAoAAAAJAAgAAgAIAAkAAAAKAPf/AgAIAAkAAAAKAPj/AgAHAAkAAAAKAPn/AgAHAAoAAAAKAPr/AgAIAAkAAAAKAPv/AgAQAB0AAAAKAPz/AgAQAB4AAAAKAP3/AgAQAB4AAAAKAP7/AgAQAB4AAAAKAP//AgAQAB4AAAAKAAAAAgAQAB4AAAAKAAEAAgAQAB4AAAAKAAIAAgAQAB4AAAAKAAMAAgAQAB4AAAAKAAQAAgAQAB8AAAAKAAUAAgAHAAkAAAAKAAYAAgAHAAoAAAAKAAcAAgAIAAoAAAAKAAgAAgAHAAkAAAALAPf/AgAIAAoAAAALAPj/AgAIAAoAAAALAPn/AgAHAAoAAAALAPr/AgAIAAoAAAALAPv/AgAHAAoAAAALAPz/AgAIAAoAAAALAP3/AgAHAAkAAAALAP7/AgAHAAoAAAALAP//AgAHAAkAAAALAAAAAgAIAAkAAAALAAEAAgAHAAoAAAALAAIAAgAHAAoAAAALAAMAAgAHAAoAAAALAAQAAgAHAAkAAAALAAUAAgAHAAkAAAALAAYAAgAIAAoAAAALAAcAAgAIAAkAAAALAAgAAgAHAAkAAAAMAPf/AgAIAAoAAAAMAPj/AgAIAAoAAAAMAPn/AgAHAAkAAAAMAPr/AgAIAAoAAAAMAPv/AgAHAAoAAAAMAPz/AgAHAAkAAAAMAP3/AgAIAAkAAAAMAP7/AgAHAAoAAAAMAP//AgAHAAkAAAAMAAAAAgAIAAkAAAAMAAEAAgAHAAkAAAAMAAIAAgAHAAoAAAAMAAMAAgAIAAkAAAAMAAQAAgAIAAoAAAAMAAUAAgAIAAkAAAAMAAYAAgAIAAkAAAAMAAcAAgAIAAoAAAAMAAgAAgAHAAkAAAANAPf/AgAIAAoAAAANAPj/AgAHAAkAAAANAPn/AgAIAAkAAAANAPr/AgAHAAkAAAANAPv/AgAHAAoAAAANAPz/AgAHAAoAAAANAP3/AgAIAAkAAAANAP7/AgAHAAoAAAANAP//AgAIAAoAAAANAAAAAgAHAAoAAAANAAEAAgAIAAoAAAANAAIAAgAIAAkAAAANAAMAAgAHAAoAAAANAAQAAgAIAAoAAAANAAUAAgAIAAkAAAANAAYAAgAIAAkAAAANAAcAAgAIAAoAAAANAAgAAgAIAAkAAAAOAPf/AgAIAAkAAAAOAPj/AgAHAAoAAAAOAPn/AgAHAAkAAAAOAPr/AgAIAAkAAAAOAPv/AgAHAAkAAAAOAPz/AgAHAAoAAAAOAP3/AgAHAAkAAAAOAP7/AgAIAAkAAAAOAP//AgAIAAkAAAAOAAAAAgAIAAkAAAAOAAEAAgAHAAoAAAAOAAIAAgAIAAkAAAAOAAMAAgAHAAkAAAAOAAQAAgAHAAoAAAAOAAUAAgAHAAkAAAAOAAYAAgAIAAoAAAAOAAcAAgAHAAkAAAAOAAgAAgAHAAoAAAD2/wUAAgAOAB8AAAA=")
+tile_set = SubResource("TileSet_hmurh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_4crtq")
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(0, -139)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_4crtq")
-
-[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="Player" to="." method="_on_player_ready"]
+[connection signal="animation_finished" from="Enemy/AnimationPlayer" to="Enemy" method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Enemy/shootTimer" to="Enemy" method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Enemy/deathTimer" to="Enemy" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Enemy/SafeZone" to="." method="_on_safe_zone_body_entered"]
+[connection signal="body_entered" from="Enemy/SafeZone" to="Enemy" method="_on_safe_zone_body_entered"]
+[connection signal="body_exited" from="Enemy/SafeZone" to="." method="_on_safe_zone_body_exited"]
+[connection signal="body_exited" from="Enemy/SafeZone" to="Enemy" method="_on_safe_zone_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
+[connection signal="timeout" from="Dash" to="." method="_on_dash_timeout"]
+[connection signal="body_shape_entered" from="Inner" to="." method="_on_inner_body_shape_entered"]
+[connection signal="body_shape_exited" from="Inner" to="." method="_on_inner_body_shape_exited"]
+[connection signal="body_shape_entered" from="Middle" to="." method="_on_middle_body_shape_entered"]
+[connection signal="body_shape_exited" from="Middle" to="." method="_on_middle_body_shape_exited"]
 
 [editable path="Player"]
-[editable path="Enemy"]
-[editable path="Enemy2"]
-[editable path="Enemy3"]
-[editable path="Enemy4"]
-[editable path="Enemy5"]
-[editable path="Enemy6"]

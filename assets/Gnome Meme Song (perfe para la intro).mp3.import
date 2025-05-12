@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4fggnbcte8xr"
+path="res://.godot/imported/Gnome Meme Song (perfe para la intro).mp3-9553006136ab99af60b4c5da23aef6af.mp3str"
+
+[deps]
+
+source_file="res://assets/Gnome Meme Song (perfe para la intro).mp3"
+dest_files=["res://.godot/imported/Gnome Meme Song (perfe para la intro).mp3-9553006136ab99af60b4c5da23aef6af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

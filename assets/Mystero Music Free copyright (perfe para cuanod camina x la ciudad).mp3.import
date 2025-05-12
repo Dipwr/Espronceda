@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://behyxcfbigiuw"
+path="res://.godot/imported/Mystero Music Free copyright (perfe para cuanod camina x la ciudad).mp3-1cc62b00fd33bafd0e123cee74233e74.mp3str"
+
+[deps]
+
+source_file="res://assets/Mystero Music Free copyright (perfe para cuanod camina x la ciudad).mp3"
+dest_files=["res://.godot/imported/Mystero Music Free copyright (perfe para cuanod camina x la ciudad).mp3-1cc62b00fd33bafd0e123cee74233e74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

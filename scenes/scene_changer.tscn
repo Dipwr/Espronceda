@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://tucf0drg8mj7"]
+[gd_scene load_steps=8 format=3 uid="uid://tucf0drg8mj7"]
 
 [ext_resource type="Script" uid="uid://dn2v3t26xu87e" path="res://scripts/scene_changer.gd" id="1_r0gix"]
-[ext_resource type="PackedScene" uid="uid://clj7ajn5tllmt" path="res://scenes/starting_under.tscn" id="2_r0gix"]
+[ext_resource type="PackedScene" uid="uid://duwblh53rmgnh" path="res://scenes/start.tscn" id="2_r0gix"]
+[ext_resource type="AudioStream" uid="uid://behyxcfbigiuw" path="res://assets/Mystero Music Free copyright (perfe para cuanod camina x la ciudad).mp3" id="2_xieu0"]
 
 [sub_resource type="Animation" id="Animation_r0gix"]
 length = 0.001
@@ -96,7 +97,8 @@ _data = {
 [node name="SceneChanger" type="Node"]
 script = ExtResource("1_r0gix")
 metadata/prevScene = ""
-metadata/dashUnlocked = true
+metadata/dashUnlocked = false
+metadata/shootUnlocked = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -118,6 +120,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="StartingUnder" parent="." instance=ExtResource("2_r0gix")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xieu0")
+
+[node name="Control" parent="." instance=ExtResource("2_r0gix")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
