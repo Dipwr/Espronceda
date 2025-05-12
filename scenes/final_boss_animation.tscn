@@ -1,15 +1,125 @@
-[gd_scene load_steps=28 format=4 uid="uid://br02m2q84dexa"]
+[gd_scene load_steps=28 format=4 uid="uid://b07gg6d71o0ns"]
 
-[ext_resource type="Script" uid="uid://clp05qnrqqpgg" path="res://scripts/final_boss.gd" id="1_mpvre"]
-[ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_7uoj5"]
-[ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_tkym2"]
-[ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_8obkr"]
-[ext_resource type="Script" uid="uid://btte6dpa4gv4u" path="res://scripts/final_boss_ai.gd" id="5_mpvre"]
-[ext_resource type="Texture2D" uid="uid://c0n0ifjr5g41y" path="res://assets/sprites/IMG_2495.PNG" id="7_7uoj5"]
-[ext_resource type="Texture2D" uid="uid://kvbc813f3mrn" path="res://assets/sprites/items/heart pixel art 16x16.png" id="8_7nq4e"]
+[ext_resource type="Script" uid="uid://dxoiher587fi2" path="res://scripts/final_boss_animation.gd" id="1_enn48"]
+[ext_resource type="PackedScene" uid="uid://dmleay567gnlq" path="res://scenes/player.tscn" id="2_6ipc0"]
+[ext_resource type="Texture2D" uid="uid://7twg86qhbb1g" path="res://assets/tileMaps/Nosotros/Calle Inicial/merged.png" id="3_pevup"]
+[ext_resource type="Texture2D" uid="uid://dctetw1hvn3xq" path="res://assets/tileMaps/cave.png" id="4_qj7i2"]
+[ext_resource type="PackedScene" uid="uid://bb10ad475l6si" path="res://scenes/textBox.tscn" id="6_83x4v"]
+[ext_resource type="Texture2D" uid="uid://c0n0ifjr5g41y" path="res://assets/sprites/IMG_2495.PNG" id="6_qu1g2"]
+[ext_resource type="Texture2D" uid="uid://kvbc813f3mrn" path="res://assets/sprites/items/heart pixel art 16x16.png" id="7_xjp6b"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qsog"]
-texture = ExtResource("3_tkym2")
+[sub_resource type="Animation" id="Animation_enn48"]
+resource_name = "new_animation"
+length = 5.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textBox/Body:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Este es el final."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textBox:animate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6ipc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textBox/Body:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Este es el final."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textBox:animate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pevup"]
+_data = {
+&"RESET": SubResource("Animation_6ipc0"),
+&"new_animation": SubResource("Animation_enn48")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dkmk"]
+texture = ExtResource("3_pevup")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -20,8 +130,8 @@ texture = ExtResource("3_tkym2")
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpvre"]
-texture = ExtResource("4_8obkr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qesp"]
+texture = ExtResource("4_qj7i2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -325,11 +435,11 @@ texture = ExtResource("4_8obkr")
 
 [sub_resource type="TileSet" id="TileSet_k2cup"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4qsog")
-sources/1 = SubResource("TileSetAtlasSource_mpvre")
+sources/0 = SubResource("TileSetAtlasSource_8dkmk")
+sources/1 = SubResource("TileSetAtlasSource_6qesp")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7uoj5"]
-texture = ExtResource("3_tkym2")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e754o"]
+texture = ExtResource("3_pevup")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -340,8 +450,8 @@ texture = ExtResource("3_tkym2")
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkym2"]
-texture = ExtResource("4_8obkr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kutkh"]
+texture = ExtResource("4_qj7i2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -645,8 +755,8 @@ texture = ExtResource("4_8obkr")
 
 [sub_resource type="TileSet" id="TileSet_6mkfv"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7uoj5")
-sources/1 = SubResource("TileSetAtlasSource_tkym2")
+sources/0 = SubResource("TileSetAtlasSource_e754o")
+sources/1 = SubResource("TileSetAtlasSource_kutkh")
 
 [sub_resource type="Animation" id="Animation_4ra3w"]
 length = 0.001
@@ -957,7 +1067,7 @@ height = 35.0
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c4w8v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8obkr"]
-atlas = ExtResource("7_7uoj5")
+atlas = ExtResource("6_qu1g2")
 region = Rect2(4, 0, 96, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4w8v"]
@@ -983,28 +1093,23 @@ height = 39.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_e754o"]
 radius = 21.5232
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj3y3"]
-size = Vector2(14, 36)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e754o"]
-radius = 34.0
-height = 114.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kutkh"]
-radius = 59.0
-height = 236.0
-
 [node name="firstBoss" type="Node2D"]
-script = ExtResource("1_mpvre")
+script = ExtResource("1_enn48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pevup")
+}
+autoplay = "new_animation"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -8)
 zoom = Vector2(2.5, 2.5)
 
-[node name="Player" parent="." instance=ExtResource("2_7uoj5")]
+[node name="Player" parent="." instance=ExtResource("2_6ipc0")]
 z_index = 10
 position = Vector2(-102, 5)
-health = 200
+script = null
 
 [node name="AnimatedSprite2D" parent="Player" index="1"]
 autoplay = "idleRight"
@@ -1036,9 +1141,6 @@ color = Color(0, 0, 0, 1)
 [node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(0, -4)
 scale = Vector2(2, 2)
-script = ExtResource("5_mpvre")
-health = 500
-shoot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
 libraries = {
@@ -1081,19 +1183,19 @@ one_shot = true
 visible = false
 position = Vector2(-3, 2)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_7nq4e")
+texture = ExtResource("7_xjp6b")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Enemy"]
 visible = false
 position = Vector2(1, -1)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_7nq4e")
+texture = ExtResource("7_xjp6b")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Enemy"]
 visible = false
 position = Vector2(4, 2)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_7nq4e")
+texture = ExtResource("7_xjp6b")
 
 [node name="dashDirection" type="Node2D" parent="Enemy"]
 
@@ -1102,34 +1204,20 @@ texture = ExtResource("8_7nq4e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/SafeZone"]
 shape = SubResource("CircleShape2D_e754o")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-241, 0)
+[node name="textBox" parent="." instance=ExtResource("6_83x4v")]
+visible = false
+offset_left = -500.0
+offset_top = 66.0
+offset_right = 500.0
+offset_bottom = 306.0
+scale = Vector2(0.2, 0.2)
+animate = false
+secPerChar = 0.075
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, 0)
-shape = SubResource("RectangleShape2D_yj3y3")
+[node name="Body" parent="textBox" index="0"]
+text = "Este es el final."
 
-[node name="DashDuration" type="Timer" parent="."]
-wait_time = 0.1
-
-[node name="Dash" type="Timer" parent="."]
-wait_time = 1.5
-autostart = true
-
-[node name="Inner" type="Area2D" parent="."]
-position = Vector2(0, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Inner"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_e754o")
-
-[node name="Middle" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
-position = Vector2(0, 5)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_kutkh")
-
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="ready" from="Player" to="." method="_on_player_ready"]
 [connection signal="animation_finished" from="Enemy/AnimationPlayer" to="Enemy" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Enemy/shootTimer" to="Enemy" method="_on_shoot_timer_timeout"]
@@ -1139,12 +1227,6 @@ shape = SubResource("CapsuleShape2D_kutkh")
 [connection signal="body_entered" from="Enemy/SafeZone" to="Enemy" method="_on_safe_zone_body_entered"]
 [connection signal="body_exited" from="Enemy/SafeZone" to="." method="_on_safe_zone_body_exited"]
 [connection signal="body_exited" from="Enemy/SafeZone" to="Enemy" method="_on_safe_zone_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="DashDuration" to="." method="_on_dash_duration_timeout"]
-[connection signal="timeout" from="Dash" to="." method="_on_dash_timeout"]
-[connection signal="body_shape_entered" from="Inner" to="." method="_on_inner_body_shape_entered"]
-[connection signal="body_shape_exited" from="Inner" to="." method="_on_inner_body_shape_exited"]
-[connection signal="body_shape_entered" from="Middle" to="." method="_on_middle_body_shape_entered"]
-[connection signal="body_shape_exited" from="Middle" to="." method="_on_middle_body_shape_exited"]
 
 [editable path="Player"]
+[editable path="textBox"]

@@ -983,7 +983,6 @@ autoplay = "enterHouse"
 z_index = 10
 y_sort_enabled = true
 position = Vector2(351, 3)
-scale = Vector2(1.75, 1.75)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(0, -6)

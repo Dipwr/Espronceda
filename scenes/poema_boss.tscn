@@ -392,7 +392,7 @@ size = Vector2(20, 313)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cl0"]
 size = Vector2(254.5, 20)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_raa8s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np8mb"]
 texture = ExtResource("7_eg22c")
 0:0/0 = 0
 1:0/0 = 0
@@ -404,7 +404,7 @@ texture = ExtResource("7_eg22c")
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sh8g4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i248w"]
 texture = ExtResource("8_raa8s")
 0:0/0 = 0
 1:0/0 = 0
@@ -707,7 +707,7 @@ texture = ExtResource("8_raa8s")
 4:20/0 = 0
 5:20/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fkbc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncyqr"]
 texture = ExtResource("9_sh8g4")
 0:0/0 = 0
 1:0/0 = 0
@@ -1791,7 +1791,7 @@ texture = ExtResource("9_sh8g4")
 0:35/0 = 0
 1:35/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cheir"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xpe2t"]
 texture = ExtResource("10_i248w")
 0:0/0 = 0
 1:0/0 = 0
@@ -1911,7 +1911,7 @@ texture = ExtResource("10_i248w")
 9:9/0 = 0
 10:9/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8key1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eg22c"]
 texture = ExtResource("11_ncyqr")
 0:0/0 = 0
 1:0/0 = 0
@@ -2179,11 +2179,11 @@ texture = ExtResource("11_ncyqr")
 
 [sub_resource type="TileSet" id="TileSet_u7vos"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_raa8s")
-sources/1 = SubResource("TileSetAtlasSource_sh8g4")
-sources/2 = SubResource("TileSetAtlasSource_6fkbc")
-sources/3 = SubResource("TileSetAtlasSource_cheir")
-sources/4 = SubResource("TileSetAtlasSource_8key1")
+sources/0 = SubResource("TileSetAtlasSource_np8mb")
+sources/1 = SubResource("TileSetAtlasSource_i248w")
+sources/2 = SubResource("TileSetAtlasSource_ncyqr")
+sources/3 = SubResource("TileSetAtlasSource_xpe2t")
+sources/4 = SubResource("TileSetAtlasSource_eg22c")
 
 [node name="firstBoss" type="Node2D"]
 script = ExtResource("1_np8mb")

@@ -907,9 +907,7 @@ position = Vector2(-54, -101)
 curve = SubResource("Curve2D_l6ed8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(51.9999, 101)
-rotation = 0.117109
-progress = 734.557
+rotation = 1.79163
 loop = false
 
 [node name="heart" type="Sprite2D" parent="Path2D/PathFollow2D"]
@@ -922,9 +920,8 @@ texture = ExtResource("8_5ft8p")
 curve = SubResource("Curve2D_ap5wk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
-position = Vector2(57, -99.9999)
+position = Vector2(57, -100)
 rotation = 1.68567
-progress = 0.000183105
 
 [node name="paper" type="Sprite2D" parent="Path2D2/PathFollow2D"]
 visible = false

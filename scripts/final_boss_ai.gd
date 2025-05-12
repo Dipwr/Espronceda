@@ -18,7 +18,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	get_parent().set_meta("prevScene", "first_boss")
-	Signals.emit_signal("changeScene", get_parent(), "res://scenes/credits.tscn")
+	Signals.emit_signal("changeScene", get_parent(), "res://scenes/final_boss_animation_end.tscn")
 	$".".process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_shoot_timer_timeout() -> void:

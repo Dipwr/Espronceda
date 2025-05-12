@@ -13,7 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$AnimationPlayer.play("hit")
 		if (health <= 0):
 			health = 9999
-			Signals.emit_signal("changeScene", get_parent(), "res://scenes/final_boss.tscn")
+			Signals.emit_signal("changeScene", get_parent(), "res://scenes/poema_boss_animation.tscn")
 			$".".process_mode = Node.PROCESS_MODE_DISABLED
 
 
